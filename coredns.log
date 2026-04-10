@@ -1,0 +1,485 @@
+maxprocs: Leaving GOMAXPROCS=12: CPU quota undefined
+.:53
+CoreDNS-1.14.2
+linux/amd64, go1.26.1, 
+[INFO] 127.0.0.1:39494 - 58237 "AAAA IN api.beacondb.net. udp 45 false 1200" - - 0 0.000056566s
+[INFO] 127.0.0.1:54025 - 41863 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000029165s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 api.beacondb.net. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:37913 - 22350 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000119186s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:54025 - 36761 "AAAA IN api.beacondb.net. udp 45 false 1200" - - 0 0.000109313s
+[ERROR] plugin/errors: 2 api.beacondb.net. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:48743 - 48504 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000129468s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:39494 - 56697 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000073594s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:54025 - 36761 "AAAA IN api.beacondb.net. udp 45 false 1200" - - 0 0.000016788s
+[ERROR] plugin/errors: 2 api.beacondb.net. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:54025 - 41863 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000016096s
+[INFO] 127.0.0.1:46071 - 22350 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000030779s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:53418 - 48504 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000032392s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:39494 - 58237 "AAAA IN api.beacondb.net. udp 45 false 1200" - - 0 0.000018932s
+[INFO] 127.0.0.1:39494 - 56697 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.00001363s
+[INFO] 127.0.0.1:33245 - 55821 "AAAA IN api.beacondb.net. udp 45 false 1200" - - 0 0.000013219s
+[INFO] 127.0.0.1:33245 - 30720 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000017118s
+[INFO] 127.0.0.1:55063 - 44253 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000011375s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:44761 - 42559 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000012688s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 api.beacondb.net. AAAA: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 api.beacondb.net. AAAA: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:33245 - 55821 "AAAA IN api.beacondb.net. udp 45 false 1200" - - 0 0.000008739s
+[ERROR] plugin/errors: 2 api.beacondb.net. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:33245 - 30720 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000021117s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:52564 - 44253 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000018802s
+[INFO] 127.0.0.1:51843 - 30058 "AAAA IN api.beacondb.net. udp 45 false 1200" - - 0 0.000009271s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:51843 - 60267 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000010674s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:50303 - 42559 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000009361s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 api.beacondb.net. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:51843 - 60267 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000009311s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:51843 - 30058 "AAAA IN api.beacondb.net. udp 45 false 1200" - - 0 0.000021939s
+[ERROR] plugin/errors: 2 api.beacondb.net. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:52329 - 62507 "AAAA IN example.org. udp 40 false 1200" - - 0 0.000035549s
+[ERROR] plugin/errors: 2 example.org. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:57934 - 7387 "A IN example.org. udp 40 false 1200" - - 0 0.000042695s
+[ERROR] plugin/errors: 2 example.org. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:52329 - 36663 "A IN example.org. udp 40 false 1200" - - 0 0.00004516s
+[ERROR] plugin/errors: 2 example.org. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:56244 - 28096 "A IN ipv4only.arpa. udp 42 false 1200" - - 0 0.000055012s
+[ERROR] plugin/errors: 2 ipv4only.arpa. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:39529 - 19452 "AAAA IN example.org. udp 40 false 1200" - - 0 0.0000134s
+[INFO] 127.0.0.1:56244 - 14022 "AAAA IN ipv4only.arpa. udp 42 false 1200" - - 0 0.000046814s
+[ERROR] plugin/errors: 2 ipv4only.arpa. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:39529 - 8065 "A IN example.org. udp 40 false 1200" - - 0 0.000010414s
+[ERROR] plugin/errors: 2 example.org. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:57934 - 19679 "AAAA IN example.org. udp 40 false 1200" - - 0 0.000043286s
+[ERROR] plugin/errors: 2 example.org. AAAA: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 example.org. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:52329 - 36663 "A IN example.org. udp 40 false 1200" - - 0 0.000010433s
+[ERROR] plugin/errors: 2 example.org. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:52329 - 62507 "AAAA IN example.org. udp 40 false 1200" - - 0 0.000006865s
+[ERROR] plugin/errors: 2 example.org. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:56244 - 28096 "A IN ipv4only.arpa. udp 42 false 1200" - - 0 0.000037043s
+[ERROR] plugin/errors: 2 ipv4only.arpa. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:56244 - 14022 "AAAA IN ipv4only.arpa. udp 42 false 1200" - - 0 0.000013881s
+[ERROR] plugin/errors: 2 ipv4only.arpa. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:46592 - 35048 "A IN example.org. udp 40 false 1200" - - 0 0.000012909s
+[ERROR] plugin/errors: 2 example.org. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:57934 - 7387 "A IN example.org. udp 40 false 1200" - - 0 0.000010884s
+[INFO] 127.0.0.1:46592 - 35823 "AAAA IN example.org. udp 40 false 1200" - - 0 0.000033014s
+[ERROR] plugin/errors: 2 example.org. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:49428 - 54382 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000034907s
+[INFO] 127.0.0.1:49428 - 35692 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000034337s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:57934 - 19679 "AAAA IN example.org. udp 40 false 1200" - - 0 0.000009221s
+[ERROR] plugin/errors: 2 example.org. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:47535 - 38608 "AAAA IN example.org. udp 40 false 1200" - - 0 0.000017469s
+[INFO] 127.0.0.1:54115 - 7138 "A IN ipv4only.arpa. udp 42 false 1200" - - 0 0.000021378s
+[ERROR] plugin/errors: 2 example.org. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:54115 - 21478 "AAAA IN ipv4only.arpa. udp 42 false 1200" - - 0 0.000023191s
+[INFO] 127.0.0.1:54139 - 63493 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000020877s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 example.org. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 ipv4only.arpa. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:47535 - 31698 "A IN example.org. udp 40 false 1200" - - 0 0.000023682s
+[ERROR] plugin/errors: 2 example.org. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:39529 - 8065 "A IN example.org. udp 40 false 1200" - - 0 0.000011064s
+[ERROR] plugin/errors: 2 example.org. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:46592 - 35823 "AAAA IN example.org. udp 40 false 1200" - - 0 0.000017189s
+[ERROR] plugin/errors: 2 example.org. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:39529 - 19452 "AAAA IN example.org. udp 40 false 1200" - - 0 0.000048037s
+[ERROR] plugin/errors: 2 example.org. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:38090 - 1145 "AAAA IN example.org. udp 40 false 1200" - - 0 0.000009231s
+[INFO] 127.0.0.1:42999 - 8696 "AAAA IN ipv4only.arpa. udp 42 false 1200" - - 0 0.000025277s
+[ERROR] plugin/errors: 2 ipv4only.arpa. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:47535 - 31698 "A IN example.org. udp 40 false 1200" - - 0 0.000009451s
+[ERROR] plugin/errors: 2 example.org. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:38090 - 55143 "A IN example.org. udp 40 false 1200" - - 0 0.000010123s
+[ERROR] plugin/errors: 2 example.org. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 ipv4only.arpa. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:54139 - 29467 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000014122s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:46592 - 35048 "A IN example.org. udp 40 false 1200" - - 0 0.00000901s
+[ERROR] plugin/errors: 2 example.org. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 example.org. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:42999 - 3827 "A IN ipv4only.arpa. udp 42 false 1200" - - 0 0.000029917s
+[ERROR] plugin/errors: 2 ipv4only.arpa. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:42530 - 3549 "A IN example.org. udp 40 false 1200" - - 0 0.000012738s
+[ERROR] plugin/errors: 2 example.org. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:47535 - 38608 "AAAA IN example.org. udp 40 false 1200" - - 0 0.000031841s
+[INFO] 127.0.0.1:42530 - 61914 "AAAA IN example.org. udp 40 false 1200" - - 0 0.000010333s
+[ERROR] plugin/errors: 2 example.org. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:54115 - 7138 "A IN ipv4only.arpa. udp 42 false 1200" - - 0 0.000010804s
+[INFO] 127.0.0.1:38090 - 55143 "A IN example.org. udp 40 false 1200" - - 0 0.000010073s
+[ERROR] plugin/errors: 2 example.org. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:38090 - 1145 "AAAA IN example.org. udp 40 false 1200" - - 0 0.000008559s
+[ERROR] plugin/errors: 2 example.org. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:54139 - 63493 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000021267s
+[INFO] 127.0.0.1:42999 - 8696 "AAAA IN ipv4only.arpa. udp 42 false 1200" - - 0 0.000009681s
+[ERROR] plugin/errors: 2 ipv4only.arpa. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:42999 - 3827 "A IN ipv4only.arpa. udp 42 false 1200" - - 0 0.000008418s
+[INFO] 127.0.0.1:49428 - 35692 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000037063s
+[ERROR] plugin/errors: 2 ipv4only.arpa. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:42530 - 61914 "AAAA IN example.org. udp 40 false 1200" - - 0 0.00000911s
+[ERROR] plugin/errors: 2 example.org. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:49428 - 54382 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000011666s
+[INFO] 127.0.0.1:42530 - 3549 "A IN example.org. udp 40 false 1200" - - 0 0.000010123s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 example.org. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:54115 - 21478 "AAAA IN ipv4only.arpa. udp 42 false 1200" - - 0 0.000006915s
+[ERROR] plugin/errors: 2 ipv4only.arpa. AAAA: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 example.org. AAAA: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 ipv4only.arpa. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:54139 - 29467 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.00004491s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:43026 - 29722 "A IN example.org. udp 40 false 1200" - - 0 0.00001368s
+[ERROR] plugin/errors: 2 example.org. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:45165 - 16278 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000068502s
+[INFO] 127.0.0.1:38856 - 9604 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000010714s
+[INFO] 127.0.0.1:43026 - 29467 "AAAA IN example.org. udp 40 false 1200" - - 0 0.000011316s
+[INFO] 127.0.0.1:43854 - 25621 "A IN ipv4only.arpa. udp 42 false 1200" - - 0 0.00001757s
+[INFO] 127.0.0.1:38856 - 32390 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000011876s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:48922 - 5829 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000012749s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 ipv4only.arpa. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:48922 - 49858 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000021598s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:43854 - 31003 "AAAA IN ipv4only.arpa. udp 42 false 1200" - - 0 0.000019704s
+[ERROR] plugin/errors: 2 ipv4only.arpa. AAAA: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 example.org. AAAA: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:45165 - 29332 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000042425s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:43026 - 29722 "A IN example.org. udp 40 false 1200" - - 0 0.000015234s
+[INFO] 127.0.0.1:43854 - 25621 "A IN ipv4only.arpa. udp 42 false 1200" - - 0 0.00001371s
+[ERROR] plugin/errors: 2 ipv4only.arpa. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:38856 - 9604 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000011475s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:43854 - 31003 "AAAA IN ipv4only.arpa. udp 42 false 1200" - - 0 0.000010994s
+[ERROR] plugin/errors: 2 example.org. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:38856 - 32390 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000015174s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:48922 - 5829 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000018211s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 ipv4only.arpa. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:45165 - 16278 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000018191s
+[INFO] 127.0.0.1:43026 - 29467 "AAAA IN example.org. udp 40 false 1200" - - 0 0.000009852s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 example.org. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:45165 - 29332 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000010724s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:48922 - 49858 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000064393s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:50899 - 15313 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000012468s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:50899 - 13535 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.00001344s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:50899 - 15313 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000016918s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:50899 - 13535 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000014111s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:44548 - 14956 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.00002279s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:38294 - 12623 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000010814s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:44548 - 46447 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000019383s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:50117 - 54352 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000013159s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:38294 - 8777 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000015575s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:50117 - 57686 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000009811s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:44548 - 46447 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000016557s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:38294 - 8777 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000010684s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:50117 - 54352 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000016586s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:50117 - 57686 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.00004037s
+[INFO] 127.0.0.1:38294 - 12623 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000012868s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:44548 - 14956 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.00005846s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:51234 - 33790 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000016527s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:54254 - 16959 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000013651s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:51234 - 64248 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000012157s
+[INFO] 127.0.0.1:51585 - 53413 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000011736s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:51585 - 52699 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000007396s
+[INFO] 127.0.0.1:54254 - 35384 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000011806s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:54254 - 16959 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000013089s
+[INFO] 127.0.0.1:51585 - 52699 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000006785s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:51585 - 53413 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.00000876s
+[INFO] 127.0.0.1:54254 - 35384 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000007828s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:51234 - 33790 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000010593s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:51234 - 64248 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000014783s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:49311 - 16733 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000016376s
+[INFO] 127.0.0.1:49311 - 4440 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000020456s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:49311 - 4440 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000016447s
+[INFO] 127.0.0.1:49311 - 16733 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000017398s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:38904 - 36158 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000016687s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:38904 - 55344 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000018932s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:38904 - 55344 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000009381s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:38904 - 36158 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000016356s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:41116 - 60868 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000009421s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:41116 - 14811 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000012558s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:41116 - 14811 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000008058s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:41116 - 60868 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000007788s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:52010 - 18534 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000008258s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:52010 - 55653 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000020105s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:52010 - 55653 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000009732s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:52010 - 18534 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000012748s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:34390 - 1436 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000015735s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:34390 - 18066 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000019333s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:34390 - 1436 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000015264s
+[INFO] 127.0.0.1:34390 - 18066 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000017099s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:35428 - 1469 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.00000897s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:35428 - 29371 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.00000886s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:34980 - 59613 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000011325s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:35428 - 1469 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000007557s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:34980 - 56283 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000015946s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:35428 - 29371 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000009842s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:34980 - 56283 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000008208s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:34980 - 59613 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000010964s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:59130 - 3698 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000006334s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:59130 - 21363 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000007456s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:59130 - 21363 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000011877s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:59130 - 3698 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000011605s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:60148 - 59143 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000010684s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:54201 - 7942 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000016246s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:60148 - 63493 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000025076s
+[INFO] 127.0.0.1:54201 - 7944 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000036051s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:54201 - 7944 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000009842s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:60148 - 63493 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.00000894s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:54201 - 7942 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.00001325s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:60148 - 59143 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.00004025s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:51731 - 59999 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000015996s
+[INFO] 127.0.0.1:46452 - 7290 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000012187s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:46452 - 44665 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000014312s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:51731 - 38749 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000033745s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:46452 - 7290 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000011796s
+[INFO] 127.0.0.1:46452 - 44665 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000010223s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:51731 - 59999 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.00001325s
+[INFO] 127.0.0.1:51731 - 38749 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000016056s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:40627 - 43671 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000016507s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:40627 - 35733 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000015654s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:37382 - 51263 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000014933s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:37382 - 51517 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000009892s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:40627 - 35733 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000012137s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:40627 - 43671 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000019013s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:37382 - 51517 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000008148s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:37382 - 51263 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000008108s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:34202 - 35867 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.00001318s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:34202 - 58653 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000039719s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:56226 - 58890 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000011004s
+[INFO] 127.0.0.1:56226 - 57096 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000012929s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:34202 - 35867 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000011316s
+[INFO] 127.0.0.1:34202 - 58653 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000006986s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:56226 - 57096 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000006304s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:56226 - 58890 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000012829s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:51769 - 51748 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000015434s
+[INFO] 127.0.0.1:51769 - 36122 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000016688s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:51769 - 51748 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000012488s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:51769 - 36122 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000014683s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:60943 - 1896 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000007737s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:60943 - 13163 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000015736s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:60943 - 13163 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000010634s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:60943 - 1896 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000012027s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:52100 - 21615 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000015194s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:52100 - 50284 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000015655s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:52100 - 50284 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000010824s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:52100 - 21615 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000011586s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:42765 - 49937 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000007907s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:42765 - 22551 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000011516s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:42765 - 49937 "AAAA IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000007967s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:42765 - 22551 "A IN detectportal.firefox.com. udp 53 false 1200" - - 0 0.000010313s
+[ERROR] plugin/errors: 2 detectportal.firefox.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:59522 - 22293 "AAAA IN api.beacondb.net. udp 45 false 1200" - - 0 0.000051244s
+[ERROR] plugin/errors: 2 api.beacondb.net. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:42815 - 45378 "AAAA IN api.beacondb.net. udp 45 false 1200" - - 0 0.000027s
+[ERROR] plugin/errors: 2 api.beacondb.net. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:49934 - 33776 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000043096s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:60938 - 29331 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000011094s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:42815 - 54598 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000019123s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:59522 - 35880 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.00002243s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:59522 - 22293 "AAAA IN api.beacondb.net. udp 45 false 1200" - - 0 0.000009572s
+[ERROR] plugin/errors: 2 api.beacondb.net. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:59522 - 35880 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.00002695s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:49946 - 29331 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000014152s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:57063 - 33776 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000014462s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:42815 - 54598 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000019584s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:42815 - 45378 "AAAA IN api.beacondb.net. udp 45 false 1200" - - 0 0.000057769s
+[ERROR] plugin/errors: 2 api.beacondb.net. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:50098 - 50408 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000024955s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:49859 - 52079 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.00001336s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:45774 - 29230 "AAAA IN api.beacondb.net. udp 45 false 1200" - - 0 0.000007307s
+[ERROR] plugin/errors: 2 api.beacondb.net. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:45774 - 45843 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000007466s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:59485 - 22024 "AAAA IN api.beacondb.net. udp 45 false 1200" - - 0 0.000037724s
+[INFO] 127.0.0.1:59485 - 64009 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000017529s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 api.beacondb.net. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:45698 - 50408 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000013921s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:45774 - 29230 "AAAA IN api.beacondb.net. udp 45 false 1200" - - 0 0.000010985s
+[ERROR] plugin/errors: 2 api.beacondb.net. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:36803 - 52079 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000011616s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:45774 - 45843 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.000013049s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:59485 - 22024 "AAAA IN api.beacondb.net. udp 45 false 1200" - - 0 0.000010834s
+[ERROR] plugin/errors: 2 api.beacondb.net. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:59485 - 64009 "A IN api.beacondb.net. udp 45 false 1200" - - 0 0.00003593s
+[ERROR] plugin/errors: 2 api.beacondb.net. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:57388 - 65142 "AAAA IN mobile.events.data.microsoft.com. udp 61 false 1200" - - 0 0.000055874s
+[ERROR] plugin/errors: 2 mobile.events.data.microsoft.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:57388 - 35706 "A IN mobile.events.data.microsoft.com. udp 61 false 1200" - - 0 0.000038787s
+[ERROR] plugin/errors: 2 mobile.events.data.microsoft.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:57388 - 65142 "AAAA IN mobile.events.data.microsoft.com. udp 61 false 1200" - - 0 0.00004477s
+[INFO] 127.0.0.1:57388 - 35706 "A IN mobile.events.data.microsoft.com. udp 61 false 1200" - - 0 0.000049771s
+[ERROR] plugin/errors: 2 mobile.events.data.microsoft.com. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 mobile.events.data.microsoft.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:46757 - 59755 "A IN mobile.events.data.microsoft.com. udp 61 false 1200" - - 0 0.000022329s
+[ERROR] plugin/errors: 2 mobile.events.data.microsoft.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:46757 - 52590 "AAAA IN mobile.events.data.microsoft.com. udp 61 false 1200" - - 0 0.00002686s
+[ERROR] plugin/errors: 2 mobile.events.data.microsoft.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:46757 - 52590 "AAAA IN mobile.events.data.microsoft.com. udp 61 false 1200" - - 0 0.000017028s
+[INFO] 127.0.0.1:46757 - 59755 "A IN mobile.events.data.microsoft.com. udp 61 false 1200" - - 0 0.00001798s
+[ERROR] plugin/errors: 2 mobile.events.data.microsoft.com. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 mobile.events.data.microsoft.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:44540 - 3741 "A IN mobile.events.data.microsoft.com. udp 61 false 1200" - - 0 0.000015615s
+[INFO] 127.0.0.1:44540 - 14745 "AAAA IN mobile.events.data.microsoft.com. udp 61 false 1200" - - 0 0.00001819s
+[ERROR] plugin/errors: 2 mobile.events.data.microsoft.com. AAAA: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 mobile.events.data.microsoft.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:44540 - 3741 "A IN mobile.events.data.microsoft.com. udp 61 false 1200" - - 0 0.000008168s
+[INFO] 127.0.0.1:44540 - 14745 "AAAA IN mobile.events.data.microsoft.com. udp 61 false 1200" - - 0 0.000016587s
+[ERROR] plugin/errors: 2 mobile.events.data.microsoft.com. A: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 mobile.events.data.microsoft.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:44764 - 55132 "AAAA IN mobile.events.data.microsoft.com. udp 61 false 1200" - - 0 0.00000879s
+[ERROR] plugin/errors: 2 mobile.events.data.microsoft.com. AAAA: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:44764 - 24411 "A IN mobile.events.data.microsoft.com. udp 61 false 1200" - - 0 0.000017609s
+[ERROR] plugin/errors: 2 mobile.events.data.microsoft.com. A: plugin/hosts: no next plugin found
+[INFO] 127.0.0.1:44764 - 55132 "AAAA IN mobile.events.data.microsoft.com. udp 61 false 1200" - - 0 0.000009822s
+[INFO] 127.0.0.1:44764 - 24411 "A IN mobile.events.data.microsoft.com. udp 61 false 1200" - - 0 0.000008078s
+[ERROR] plugin/errors: 2 mobile.events.data.microsoft.com. AAAA: plugin/hosts: no next plugin found
+[ERROR] plugin/errors: 2 mobile.events.data.microsoft.com. A: plugin/hosts: no next plugin found
+[INFO] SIGINT: Shutting down

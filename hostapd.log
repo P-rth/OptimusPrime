@@ -1,0 +1,6 @@
+wlp1s0: interface state UNINITIALIZED->ENABLED
+wlp1s0: AP-ENABLED 
+wlp1s0: interface state ENABLED->DISABLED
+wlp1s0: AP-DISABLED 
+wlp1s0: CTRL-EVENT-TERMINATING 
+nl80211: deinit ifname=wlp1s0 disabled_11b_rates=0
