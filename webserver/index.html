@@ -321,17 +321,9 @@
 
     <script>
         function fetchLogs() {
-            const logs = [
-                "[INFO] 10:12:09 query[A] thermostat.local from 192.168.1.34",
-                "[INFO] 10:12:11 query[A] camera.vendor-cloud.net from 192.168.1.41",
-                "[WARN] 10:12:14 blocked telemetry.bad-collector.net from 192.168.1.41",
-                "[INFO] 10:12:17 query[AAAA] speaker.update-service.com from 192.168.1.56",
-                "[WARN] 10:12:20 blocked ads.tracker-stream.io from 192.168.1.77",
-                "[INFO] 10:12:24 query[A] weather-api.internal from 192.168.1.23",
-                "[INFO] 10:12:28 cache hit smart-tv.firmware-update.net"
-            ];
-
-            return Promise.resolve(logs);
+            return fetch('logs')
+                .then(function(res) { return res.json(); })
+                .catch(function() { return ['[SYSTEM] Could not reach logs']; });
         }
 
         function fetchDevices() {
@@ -391,22 +383,15 @@
             logsPanel.scrollTop = logsPanel.scrollHeight;
         }
 
-        function startLogSimulation(initialLogs) {
-            const rotatingMockLines = [
-                "[INFO] 10:13:02 query[A] thermostat.local from 192.168.1.34",
-                "[INFO] 10:13:05 query[A] light-controller.api from 192.168.1.23",
-                "[WARN] 10:13:08 blocked metrics.untrusted-node.net from 192.168.1.56",
-                "[INFO] 10:13:11 cache hit weather-api.internal",
-                "[WARN] 10:13:14 blocked suspicious-pixel.delivery.io from 192.168.1.77"
-            ];
-
-            initialLogs.forEach(appendLogLine);
-
-            let pointer = 0;
-            setInterval(function () {
-                appendLogLine(rotatingMockLines[pointer]);
-                pointer = (pointer + 1) % rotatingMockLines.length;
-            }, 3000);
+        function startRealtimeLogs() {
+            function refresh() {
+                fetchLogs().then(function(lines) {
+                    document.getElementById('logsPanel').innerHTML = '';
+                    lines.forEach(appendLogLine);
+                });
+            }
+            refresh();
+            setInterval(refresh, 2000);
         }
 
         function renderDevicesTable(devices) {
@@ -464,17 +449,13 @@
         }
 
         function initializeDashboard() {
-            Promise.all([fetchLogs(), fetchDevices(), fetchBlockedHistory(), fetchConfiguration()])
-                .then(function (results) {
-                    const logs = results[0];
-                    const devices = results[1];
-                    const blockedHistory = results[2];
-                    const configuration = results[3];
+            startRealtimeLogs();
 
-                    startLogSimulation(logs);
-                    renderDevicesTable(devices);
-                    renderBlockedHistoryTable(blockedHistory);
-                    populateConfigurationForm(configuration);
+            Promise.all([fetchDevices(), fetchBlockedHistory(), fetchConfiguration()])
+                .then(function (results) {
+                    renderDevicesTable(results[0]);
+                    renderBlockedHistoryTable(results[1]);
+                    populateConfigurationForm(results[2]);
                 })
                 .catch(function (error) {
                     console.error("Dashboard initialization failed:", error);

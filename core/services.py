@@ -3,6 +3,10 @@ import time
 import os
 import signal
 import logging
+import csv
+import threading
+
+from fingerprinting import DeviceScanner
 
 class ServiceManager:
     def __init__(self, config):
@@ -10,6 +14,10 @@ class ServiceManager:
         self.processes = []
         self.log_dir = os.path.join(self.config.SCRIPT_DIR, "logs")
         os.makedirs(self.log_dir, exist_ok=True)
+        self.scanner = DeviceScanner(config)
+        self.scanner_stop_event = threading.Event()
+        self.scanner_thread = None
+        self.fingerprinting_csv = os.path.join(self.log_dir, "fingerprinting.csv")
 
     def _log_path_for(self, name):
         safe_name = name.lower().replace(" ", "_")
@@ -43,6 +51,45 @@ class ServiceManager:
                 f"{name} failed to start (exit code {proc.returncode}). Check log: {log_path}"
             )
         return proc
+
+    def _write_fingerprinting_csv(self, devices):
+        headers = ["mac", "ip", "hostname", "vendor", "type", "confidence", "first_seen"]
+        with open(self.fingerprinting_csv, "w", newline="", encoding="utf-8") as fp:
+            writer = csv.DictWriter(fp, fieldnames=headers)
+            writer.writeheader()
+            for mac in sorted((devices or {}).keys()):
+                entry = devices.get(mac) or {}
+                writer.writerow(
+                    {
+                        "mac": mac,
+                        "ip": entry.get("ip", ""),
+                        "hostname": entry.get("hostname", ""),
+                        "vendor": entry.get("vendor", ""),
+                        "type": entry.get("type", ""),
+                        "confidence": entry.get("confidence", ""),
+                        "first_seen": entry.get("first_seen", ""),
+                    }
+                )
+
+    def _start_fingerprinting_scanner(self):
+        if self.scanner_thread and self.scanner_thread.is_alive():
+            return
+        self.scanner_stop_event.clear()
+        self.scanner_thread = threading.Thread(
+            target=self.scanner.run,
+            kwargs={
+                "stop_event": self.scanner_stop_event,
+                "on_cycle": self._write_fingerprinting_csv,
+            },
+            name="DeviceScannerThread",
+            daemon=True,
+        )
+        self.scanner_thread.start()
+
+    def _stop_fingerprinting_scanner(self):
+        self.scanner_stop_event.set()
+        if self.scanner_thread and self.scanner_thread.is_alive():
+            self.scanner_thread.join(timeout=3)
 
     def start_all(self):
         # Stop existing
@@ -96,6 +143,7 @@ class ServiceManager:
             f"--dhcp-option=option:dns-server,{self.config.GATEWAY_IP}"
         ]
         self.start_service(dhcp_cmd, "DHCP Server")
+        self._start_fingerprinting_scanner()
 
         # Ensure nothing silently died after startup.
         time.sleep(0.6)
@@ -107,6 +155,7 @@ class ServiceManager:
 
     def stop_all(self):
         print("\n[*] Stopping Governance Services...")
+        self._stop_fingerprinting_scanner()
         for proc, name, _, log_fp in self.processes:
             try:
                 # Use sudo pkill for services started with sudo
@@ -124,3 +173,4 @@ class ServiceManager:
                 pass
             finally:
                 log_fp.close()
+        self.processes = []

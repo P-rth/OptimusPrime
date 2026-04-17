@@ -1,40 +1,39 @@
-from http.server import HTTPServer, BaseHTTPRequestHandler
+import http.server
+import socketserver
+import json
 import os
 
-# Get the directory where server.py lives
+PORT = 8081
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+LOG_FILE = os.path.join(BASE_DIR, "..", "logs", "coredns.log")
 
-class Serv(BaseHTTPRequestHandler):
+class Handler(http.server.SimpleHTTPRequestHandler):
+
     def do_GET(self):
-        if self.path == '/':
-            self.path = '/index.html'
+        if self.path == "/logs":
+            try:
+                with open(LOG_FILE, "r") as f:
+                    lines = f.readlines()
+                last_50 = [line.strip() for line in lines[-50:] if line.strip()]
+            except FileNotFoundError:
+                last_50 = ["[SYSTEM] coredns.log not found."]
 
-        # Resolve path relative to the script's own directory
-        file_path = os.path.join(BASE_DIR, self.path.lstrip('/'))
-
-        try:
-            with open(file_path) as f:
-                file_to_open = f.read()
+            body = json.dumps(last_50).encode("utf-8")
             self.send_response(200)
-            self.send_header('Content-type', 'text/html')
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(body)))
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(body)
+            return
 
-        except FileNotFoundError:
-            file_to_open = "<h1>404 File not found</h1>"
-            self.send_response(404)
-            self.send_header('Content-type', 'text/html')
-
-        except Exception as e:
-            print(f"Error handling request: {e}")
-            file_to_open = "<h1>500 Server error</h1>"
-            self.send_response(500)
-            self.send_header('Content-type', 'text/html')
-
-        self.end_headers()
-        self.wfile.write(bytes(file_to_open, 'utf-8'))
+        return super().do_GET()
 
     def log_message(self, format, *args):
         print(format % args)
 
-httpd = HTTPServer(('0.0.0.0', 8080), Serv)
-print("Server running on http://localhost:8080")
-httpd.serve_forever()
+os.chdir(BASE_DIR)
+
+with socketserver.TCPServer(("", PORT), Handler) as httpd:
+    print(f"Serving at http://127.0.0.1:{PORT}")
+    httpd.serve_forever()

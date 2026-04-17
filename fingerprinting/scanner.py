@@ -45,51 +45,58 @@ class DeviceScanner:
         return devices
 
     def update_registry(self):
-        """Poll the dnsmasq leases file every 5 seconds and update the persistent registry.
+        self.run()
 
-        This is a blocking loop suitable for running in a background thread.
-        """
+    def scan_once(self):
+        if not os.path.exists(self.leases_path):
+            logging.debug("Leases file does not exist yet: %s", self.leases_path)
+            return
+
+        with open(self.leases_path, "r", encoding="utf-8", errors="replace") as fp:
+            content = fp.read()
+
+        for mac, ip, hostname in self._parse_leases(content):
+            was_known = self.registry.has(mac)
+
+            vendor = self.oui.resolve(mac)
+            classification = self.classifier.classify(vendor, hostname)
+            dev_type = classification["type"]
+            confidence = classification["confidence"]
+
+            self.registry.upsert(
+                mac=mac,
+                ip=ip,
+                hostname=hostname,
+                vendor=vendor,
+                dev_type=dev_type,
+                confidence=confidence,
+            )
+
+            if not was_known:
+                print(f"[!] NEW DEVICE IDENTIFIED: {vendor} {dev_type} ({ip})")
+                logging.info("New device: mac=%s vendor=%s type=%s ip=%s", mac, vendor, dev_type, ip)
+
+    def run(self, stop_event=None, on_cycle=None):
         logging.info("DeviceScanner watching leases file: %s", self.leases_path)
         logging.info("Identity registry: %s", getattr(self.config, "DEVICES_JSON", "<unset>"))
         logging.info("OUI map: %s", getattr(self.config, "OUI_JSON", "<unset>"))
 
         while True:
+            if stop_event is not None and stop_event.is_set():
+                break
+
             try:
-                if not os.path.exists(self.leases_path):
-                    logging.debug("Leases file does not exist yet: %s", self.leases_path)
-                    time.sleep(self.poll_interval_sec)
-                    continue
-
-                with open(self.leases_path, "r", encoding="utf-8", errors="replace") as fp:
-                    content = fp.read()
-
-                for mac, ip, hostname in self._parse_leases(content):
-                    was_known = self.registry.has(mac)
-
-                    vendor = self.oui.resolve(mac)
-                    classification = self.classifier.classify(vendor, hostname)
-                    dev_type = classification["type"]
-                    confidence = classification["confidence"]
-
-                    # Persist immediately (and preserve first_seen if already known).
-                    self.registry.upsert(
-                        mac=mac,
-                        ip=ip,
-                        hostname=hostname,
-                        vendor=vendor,
-                        dev_type=dev_type,
-                        confidence=confidence,
-                    )
-
-                    # Only alert if it did not already exist in persisted registry.
-                    if not was_known:
-                        print(f"[!] NEW DEVICE IDENTIFIED: {vendor} {dev_type} ({ip})")
-                        logging.info("New device: mac=%s vendor=%s type=%s ip=%s", mac, vendor, dev_type, ip)
-
+                self.scan_once()
+                if on_cycle is not None:
+                    on_cycle(self.get_active_devices())
             except Exception as exc:
                 logging.exception("DeviceScanner error: %s", exc)
 
-            time.sleep(self.poll_interval_sec)
+            if stop_event is not None:
+                if stop_event.wait(self.poll_interval_sec):
+                    break
+            else:
+                time.sleep(self.poll_interval_sec)
 
     def get_active_devices(self):
         return self.registry.get_all()
