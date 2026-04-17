@@ -1,12 +1,14 @@
 . {
     # 1. Check the blocklist first
     hosts ./blocklist.txt {
+        reload 1s
         fallthrough
     }
 
     # 2. If the domain is NOT in the blocklist, resolve it normally
     forward . 8.8.8.8 1.1.1.1
     
+    reload
     log
     errors
 }

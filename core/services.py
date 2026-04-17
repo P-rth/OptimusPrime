@@ -56,8 +56,7 @@ class ServiceManager:
 
         # 2. CoreDNS
         coredns_path = self.config.COREDNS_BIN
-        coredns_dir = os.path.dirname(coredns_path)
-        coredns_bin = os.path.basename(coredns_path)
+        corefile_dir = os.path.dirname(self.config.COREFILE)
 
         if not os.path.exists(coredns_path):
             raise RuntimeError(f"CoreDNS binary not found: {coredns_path}")
@@ -74,9 +73,9 @@ class ServiceManager:
                 ) from exc
 
         self.start_service(
-            ["sudo", f"./{coredns_bin}", "-conf", self.config.COREFILE],
+            ["sudo", coredns_path, "-conf", self.config.COREFILE],
             "CoreDNS",
-            cwd=coredns_dir,
+            cwd=corefile_dir,
         )
         if not self._ensure_coredns_listening():
             raise RuntimeError("CoreDNS did not bind to :53. Check logs/coredns.log")
@@ -112,19 +111,16 @@ class ServiceManager:
             try:
                 # Use sudo pkill for services started with sudo
                 if "CoreDNS" in name:
-                    subprocess.run(["sudo", "pkill", "-f", self.config.COREDNS_BIN], stderr=subprocess.DEVNULL)
+                    subprocess.run(["sudo", "pkill", "-f", self.config.COREDNS_BIN])
                 elif "HostAPD" in name:
-                    subprocess.run(["sudo", "pkill", "-x", "hostapd"], stderr=subprocess.DEVNULL)
+                    subprocess.run(["sudo", "pkill", "-x", "hostapd"])
                 elif "DHCP" in name:
-                    subprocess.run(["sudo", "pkill", "-x", "dnsmasq"], stderr=subprocess.DEVNULL)
+                    subprocess.run(["sudo", "pkill", "-x", "dnsmasq"])
                 elif "Sinkhole" in name:
-                    subprocess.run(["sudo", "pkill", "-f", self.config.WEB_SERVER_SCRIPT], stderr=subprocess.DEVNULL)
+                    subprocess.run(["sudo", "pkill", "-f", self.config.WEB_SERVER_SCRIPT])
                 
                 proc.terminate()
             except:
                 pass
             finally:
-                try:
-                    log_fp.close()
-                except:
-                    pass
+                log_fp.close()

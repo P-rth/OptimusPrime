@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inline Sentinel Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-primary: #eef1f4;
-            --bg-secondary: #ffffff;
-            --bg-tertiary: #f6f8fa;
-            --border: #d4dbe3;
-            --text-primary: #1f2933;
-            --text-secondary: #4f5d6b;
-            --text-muted: #6b7785;
-            --safe: #24313d;
-            --blocked: #8b3f3f;
-            --focus: #475569;
+            --bg-page: #EAEFEF;
+            --bg-card: #FFFFFF;
+            --border-subtle: #BFC9D1;
+            --text-main: #25343F;
+            --accent-warning: #FF9B51;
+            --log-bg: #25343F;
+            --log-text: #EAEFEF;
         }
 
         * {
@@ -24,9 +22,8 @@
 
         body {
             margin: 0;
-            color: var(--text-primary);
-            background:
-                linear-gradient(180deg, #f4f6f8 0%, #edf1f5 100%);
+            color: var(--text-main);
+            background: var(--bg-page);
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -37,8 +34,10 @@
         }
 
         .page-header {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(37, 52, 63, 0.08);
             padding: 18px 20px;
             margin-bottom: 18px;
         }
@@ -52,8 +51,9 @@
 
         .page-header p {
             margin: 8px 0 0;
-            color: var(--text-secondary);
+            color: var(--text-main);
             font-size: 0.92rem;
+            opacity: 0.8;
         }
 
         .layout {
@@ -63,24 +63,27 @@
         }
 
         .section {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            padding: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(37, 52, 63, 0.08);
+            padding: 24px;
         }
 
         .section-title {
             margin: 0 0 12px;
             font-size: 1rem;
             font-weight: 600;
-            color: var(--text-primary);
+            color: var(--text-main);
         }
 
         .logs-panel {
             height: 280px;
             overflow-y: auto;
-            background: #14181d;
-            color: #c7ced6;
-            border: 1px solid #2a3038;
+            background: var(--log-bg);
+            color: var(--log-text);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
             padding: 12px;
             font-family: Consolas, "Courier New", monospace;
             font-size: 0.86rem;
@@ -110,26 +113,29 @@
 
         label {
             font-size: 0.84rem;
-            color: var(--text-secondary);
+            color: var(--text-main);
+            opacity: 0.8;
         }
 
         input {
             width: 100%;
-            border: 1px solid var(--border);
-            background: #fff;
-            color: var(--text-primary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            background: var(--bg-card);
+            color: var(--text-main);
             padding: 9px 10px;
             font-size: 0.92rem;
             outline: none;
         }
 
         input:focus {
-            border-color: var(--focus);
+            border-color: var(--text-main);
         }
 
         input[readonly] {
-            background: var(--bg-tertiary);
-            color: var(--text-muted);
+            background: var(--bg-page);
+            color: var(--text-main);
+            opacity: 0.7;
             cursor: not-allowed;
         }
 
@@ -137,16 +143,17 @@
             grid-column: 1 / -1;
             justify-self: start;
             margin-top: 4px;
-            border: 1px solid #3f4d5d;
-            background: #2f3a46;
-            color: #f1f5f9;
+            border: 0;
+            border-radius: 8px;
+            background: var(--text-main);
+            color: var(--bg-page);
             padding: 9px 14px;
             font-size: 0.9rem;
             cursor: pointer;
         }
 
         .submit-btn:hover {
-            background: #27313c;
+            background: var(--accent-warning);
         }
 
         .table-wrap {
@@ -161,26 +168,41 @@
 
         th,
         td {
-            border: 1px solid var(--border);
-            padding: 9px 10px;
+            border: 0;
+            padding: 16px;
             text-align: left;
             vertical-align: top;
             white-space: nowrap;
         }
 
         th {
-            background: #f0f3f7;
-            color: #374553;
+            background: transparent;
+            color: var(--border-subtle);
             font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+        }
+
+        thead tr {
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        tbody tr {
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        tbody tr:last-child {
+            border-bottom: 0;
         }
 
         .status-safe {
-            color: var(--safe);
+            color: var(--text-main);
             font-weight: 600;
         }
 
         .status-blocked {
-            color: var(--blocked);
+            color: var(--accent-warning);
             font-weight: 600;
         }
 
@@ -198,18 +220,18 @@
 <body>
     <main class="dashboard">
         <header class="page-header">
-            <h1>Inline Sentinel - Security Gateway Dashboard</h1>
+            <h1><i class="fa-solid fa-shield-halved" style="margin-right: 8px; color: #BFC9D1;" aria-hidden="true"></i>Inline Sentinel - Security Gateway Dashboard</h1>
             <p>Live DNS telemetry, configuration controls, and endpoint risk visibility</p>
         </header>
 
         <div class="layout">
             <section class="section">
-                <h2 class="section-title">CoreDNS Logs</h2>
+                <h2 class="section-title"><i class="fa-solid fa-terminal" style="margin-right: 8px; color: #BFC9D1;" aria-hidden="true"></i>CoreDNS Logs</h2>
                 <div id="logsPanel" class="logs-panel" aria-live="polite"></div>
             </section>
 
             <section class="section">
-                <h2 class="section-title">Configuration</h2>
+                <h2 class="section-title"><i class="fa-solid fa-sliders" style="margin-right: 8px; color: #BFC9D1;" aria-hidden="true"></i>Configuration</h2>
                 <form id="configForm" class="config-form">
                     <div class="form-field">
                         <label for="configName">Name</label>
@@ -241,7 +263,7 @@
             </section>
 
             <section class="section">
-                <h2 class="section-title">Connected IoT Devices</h2>
+                <h2 class="section-title"><i class="fa-solid fa-network-wired" style="margin-right: 8px; color: #BFC9D1;" aria-hidden="true"></i>Connected IoT Devices</h2>
                 <div class="table-wrap">
                     <table>
                         <thead>
@@ -258,7 +280,7 @@
             </section>
 
             <section class="section">
-                <h2 class="section-title">Blocked History</h2>
+                <h2 class="section-title"><i class="fa-solid fa-ban" style="margin-right: 8px; color: #BFC9D1;" aria-hidden="true"></i>Blocked History</h2>
                 <div class="table-wrap">
                     <table>
                         <thead>

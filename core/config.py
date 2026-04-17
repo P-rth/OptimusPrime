@@ -32,3 +32,10 @@ class Config:
     COREFILE = os.path.join(SCRIPT_DIR, "files", "Corefile")
     HOSTAPD_CONF = os.path.join(SCRIPT_DIR, "files", "hostapd.conf")
     WEB_SERVER_SCRIPT = os.path.join(SCRIPT_DIR, "webserver", "server.py")
+
+    # Fingerprinting / Identity Engine data paths
+    DATA_DIR = os.path.join(SCRIPT_DIR, "data")
+    OUI_JSON = os.path.join(DATA_DIR, "oui.json")
+    DEVICES_JSON = os.path.join(DATA_DIR, "devices.json")
+
+    os.makedirs(DATA_DIR, exist_ok=True)

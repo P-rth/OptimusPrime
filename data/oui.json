@@ -1,0 +1,20 @@
+{
+  "00:03:93": "Apple",
+  "00:05:02": "Apple",
+  "F0:99:B6": "Apple",
+  "3C:5A:B4": "Apple",
+
+  "00:07:AB": "Samsung",
+  "D0:17:C2": "Samsung",
+
+  "00:03:47": "Intel",
+  "3C:A9:F4": "Intel",
+
+  "B8:27:EB": "Raspberry Pi",
+  "DC:A6:32": "Raspberry Pi",
+
+  "24:0A:C4": "Espressif",
+  "7C:DF:A1": "Espressif",
+
+  "50:8A:06": "Tuya"
+}
