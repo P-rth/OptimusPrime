@@ -4,3 +4,156 @@ wlan0: Could not connect to kernel driver
 Switch own primary and secondary channel to get secondary channel with no Beacons from other BSSes
 wlan0: interface state HT_SCAN->ENABLED
 wlan0: AP-ENABLED 
+wlan0: STA dc:56:7b:1d:3f:99 IEEE 802.11: associated
+wlan0: AP-STA-CONNECTED dc:56:7b:1d:3f:99
+wlan0: STA dc:56:7b:1d:3f:99 RADIUS: starting accounting session CF5423EEAECD4555
+wlan0: STA dc:56:7b:1d:3f:99 WPA: pairwise key handshake completed (RSN)
+wlan0: EAPOL-4WAY-HS-COMPLETED dc:56:7b:1d:3f:99
+wlan0: STA dc:56:7b:1d:3f:99 IEEE 802.11: disassociated
+wlan0: AP-STA-DISCONNECTED dc:56:7b:1d:3f:99
+wlan0: INTERFACE-DISABLED 
+wlan0: STA e7:01:e3:01:e3:01 IEEE 802.11: disassociated
+wlan0: INTERFACE-ENABLED 
+Failed to set beacon parameters
+wlan0: interface state ENABLED->DISABLED
+wlan0: AP-DISABLED 
+wlan0: CTRL-EVENT-TERMINATING 
+nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+wlan0: interface state UNINITIALIZED->COUNTRY_UPDATE
+wlan0: interface state COUNTRY_UPDATE->HT_SCAN
+Failed to set beacon parameters
+wlan0: Could not connect to kernel driver
+Interface initialization failed
+wlan0: interface state HT_SCAN->DISABLED
+wlan0: AP-DISABLED 
+wlan0: interface state DISABLED->DISABLED
+wlan0: AP-DISABLED 
+wlan0: CTRL-EVENT-TERMINATING 
+hostapd_free_hapd_data: Interface wlan0 wasn't started
+nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+wlan0: interface state UNINITIALIZED->COUNTRY_UPDATE
+wlan0: interface state COUNTRY_UPDATE->HT_SCAN
+Switch own primary and secondary channel to get secondary channel with no Beacons from other BSSes
+wlan0: interface state HT_SCAN->ENABLED
+wlan0: AP-ENABLED 
+wlan0: STA dc:56:7b:1d:3f:99 IEEE 802.11: associated
+wlan0: AP-STA-CONNECTED dc:56:7b:1d:3f:99
+wlan0: STA dc:56:7b:1d:3f:99 RADIUS: starting accounting session 3F0435CD2726FA4B
+wlan0: STA dc:56:7b:1d:3f:99 WPA: pairwise key handshake completed (RSN)
+wlan0: EAPOL-4WAY-HS-COMPLETED dc:56:7b:1d:3f:99
+wlan0: STA dc:56:7b:1d:3f:99 IEEE 802.11: disassociated
+wlan0: AP-STA-DISCONNECTED dc:56:7b:1d:3f:99
+wlan0: STA dc:56:7b:1d:3f:99 IEEE 802.11: disassociated
+wlan0: STA dc:56:7b:1d:3f:99 IEEE 802.11: associated
+wlan0: AP-STA-CONNECTED dc:56:7b:1d:3f:99
+wlan0: STA dc:56:7b:1d:3f:99 RADIUS: starting accounting session 8CEAE91EF852F3CA
+wlan0: STA dc:56:7b:1d:3f:99 WPA: pairwise key handshake completed (RSN)
+wlan0: EAPOL-4WAY-HS-COMPLETED dc:56:7b:1d:3f:99
+wlan0: interface state ENABLED->DISABLED
+wlan0: AP-STA-DISCONNECTED dc:56:7b:1d:3f:99
+wlan0: AP-DISABLED 
+wlan0: CTRL-EVENT-TERMINATING 
+nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+wlan0: interface state UNINITIALIZED->COUNTRY_UPDATE
+wlan0: interface state COUNTRY_UPDATE->HT_SCAN
+wlan0: interface state HT_SCAN->ENABLED
+wlan0: AP-ENABLED 
+wlan0: STA dc:56:7b:1d:3f:99 IEEE 802.11: associated
+wlan0: AP-STA-CONNECTED dc:56:7b:1d:3f:99
+wlan0: STA dc:56:7b:1d:3f:99 RADIUS: starting accounting session 86443FCAD2BA7A4A
+wlan0: STA dc:56:7b:1d:3f:99 WPA: pairwise key handshake completed (RSN)
+wlan0: EAPOL-4WAY-HS-COMPLETED dc:56:7b:1d:3f:99
+wlan0: interface state ENABLED->DISABLED
+wlan0: AP-STA-DISCONNECTED dc:56:7b:1d:3f:99
+wlan0: AP-DISABLED 
+wlan0: CTRL-EVENT-TERMINATING 
+nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+wlan0: interface state UNINITIALIZED->COUNTRY_UPDATE
+wlan0: interface state COUNTRY_UPDATE->HT_SCAN
+Switch own primary and secondary channel to get secondary channel with no Beacons from other BSSes
+wlan0: interface state HT_SCAN->ENABLED
+wlan0: AP-ENABLED 
+wlan0: STA 96:27:4e:63:fb:d4 IEEE 802.11: disassociated
+wlan0: STA dc:56:7b:1d:3f:99 IEEE 802.11: associated
+wlan0: AP-STA-CONNECTED dc:56:7b:1d:3f:99
+wlan0: STA dc:56:7b:1d:3f:99 RADIUS: starting accounting session 26263F814D7BEF99
+wlan0: STA dc:56:7b:1d:3f:99 WPA: pairwise key handshake completed (RSN)
+wlan0: EAPOL-4WAY-HS-COMPLETED dc:56:7b:1d:3f:99
+wlan0: interface state ENABLED->DISABLED
+wlan0: AP-STA-DISCONNECTED dc:56:7b:1d:3f:99
+wlan0: AP-DISABLED 
+wlan0: CTRL-EVENT-TERMINATING 
+nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+wlan0: interface state UNINITIALIZED->COUNTRY_UPDATE
+wlan0: interface state COUNTRY_UPDATE->HT_SCAN
+Switch own primary and secondary channel to get secondary channel with no Beacons from other BSSes
+wlan0: interface state HT_SCAN->ENABLED
+wlan0: AP-ENABLED 
+wlan0: STA 4a:98:0e:6f:87:19 IEEE 802.11: disassociated
+wlan0: STA dc:56:7b:1d:3f:99 IEEE 802.11: associated
+wlan0: AP-STA-CONNECTED dc:56:7b:1d:3f:99
+wlan0: STA dc:56:7b:1d:3f:99 RADIUS: starting accounting session 461FE76DE81411F7
+wlan0: STA dc:56:7b:1d:3f:99 WPA: pairwise key handshake completed (RSN)
+wlan0: EAPOL-4WAY-HS-COMPLETED dc:56:7b:1d:3f:99
+wlan0: STA dc:56:7b:1d:3f:99 IEEE 802.11: disassociated
+wlan0: AP-STA-DISCONNECTED dc:56:7b:1d:3f:99
+wlan0: STA dc:56:7b:1d:3f:99 IEEE 802.11: disassociated
+wlan0: STA dc:56:7b:1d:3f:99 IEEE 802.11: associated
+wlan0: AP-STA-CONNECTED dc:56:7b:1d:3f:99
+wlan0: STA dc:56:7b:1d:3f:99 RADIUS: starting accounting session 1EA3514BEEAAFA03
+wlan0: STA dc:56:7b:1d:3f:99 WPA: pairwise key handshake completed (RSN)
+wlan0: EAPOL-4WAY-HS-COMPLETED dc:56:7b:1d:3f:99
+wlan0: interface state ENABLED->DISABLED
+wlan0: AP-STA-DISCONNECTED dc:56:7b:1d:3f:99
+wlan0: AP-DISABLED 
+wlan0: CTRL-EVENT-TERMINATING 
+nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+wlan0: interface state UNINITIALIZED->COUNTRY_UPDATE
+wlan0: interface state COUNTRY_UPDATE->HT_SCAN
+wlan0: interface state HT_SCAN->ENABLED
+wlan0: AP-ENABLED 
+wlan0: STA 8a:52:2c:d2:00:59 IEEE 802.11: disassociated
+wlan0: STA dc:56:7b:1d:3f:99 IEEE 802.11: associated
+wlan0: AP-STA-CONNECTED dc:56:7b:1d:3f:99
+wlan0: STA dc:56:7b:1d:3f:99 RADIUS: starting accounting session 700542D760C9A15A
+wlan0: STA dc:56:7b:1d:3f:99 WPA: pairwise key handshake completed (RSN)
+wlan0: EAPOL-4WAY-HS-COMPLETED dc:56:7b:1d:3f:99
+wlan0: interface state ENABLED->DISABLED
+wlan0: AP-STA-DISCONNECTED dc:56:7b:1d:3f:99
+wlan0: AP-DISABLED 
+wlan0: CTRL-EVENT-TERMINATING 
+nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+wlan0: interface state UNINITIALIZED->COUNTRY_UPDATE
+wlan0: interface state COUNTRY_UPDATE->HT_SCAN
+Switch own primary and secondary channel to get secondary channel with no Beacons from other BSSes
+wlan0: interface state HT_SCAN->ENABLED
+wlan0: AP-ENABLED 
+wlan0: STA dc:56:7b:1d:3f:99 IEEE 802.11: associated
+wlan0: AP-STA-CONNECTED dc:56:7b:1d:3f:99
+wlan0: STA dc:56:7b:1d:3f:99 RADIUS: starting accounting session 95E566CE47228E9D
+wlan0: STA dc:56:7b:1d:3f:99 WPA: pairwise key handshake completed (RSN)
+wlan0: EAPOL-4WAY-HS-COMPLETED dc:56:7b:1d:3f:99
+wlan0: interface state ENABLED->DISABLED
+wlan0: AP-STA-DISCONNECTED dc:56:7b:1d:3f:99
+wlan0: AP-DISABLED 
+wlan0: CTRL-EVENT-TERMINATING 
+nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+wlan0: interface state UNINITIALIZED->COUNTRY_UPDATE
+wlan0: interface state COUNTRY_UPDATE->HT_SCAN
+wlan0: interface state HT_SCAN->ENABLED
+wlan0: AP-ENABLED 
+wlan0: STA dc:56:7b:1d:3f:99 IEEE 802.11: associated
+wlan0: AP-STA-CONNECTED dc:56:7b:1d:3f:99
+wlan0: STA dc:56:7b:1d:3f:99 RADIUS: starting accounting session 1C59BC93315D7FF1
+wlan0: STA dc:56:7b:1d:3f:99 WPA: pairwise key handshake completed (RSN)
+wlan0: EAPOL-4WAY-HS-COMPLETED dc:56:7b:1d:3f:99
+wlan0: interface state UNINITIALIZED->COUNTRY_UPDATE
+wlan0: interface state COUNTRY_UPDATE->HT_SCAN
+Switch own primary and secondary channel to get secondary channel with no Beacons from other BSSes
+wlan0: interface state HT_SCAN->ENABLED
+wlan0: AP-ENABLED 
+wlan0: STA dc:56:7b:1d:3f:99 IEEE 802.11: associated
+wlan0: AP-STA-CONNECTED dc:56:7b:1d:3f:99
+wlan0: STA dc:56:7b:1d:3f:99 RADIUS: starting accounting session 38B3D7524F330659
+wlan0: STA dc:56:7b:1d:3f:99 WPA: pairwise key handshake completed (RSN)
+wlan0: EAPOL-4WAY-HS-COMPLETED dc:56:7b:1d:3f:99

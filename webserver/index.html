@@ -11,9 +11,27 @@
             --bg-card: #FFFFFF;
             --border-subtle: #BFC9D1;
             --text-main: #25343F;
-            --accent-warning: #FF9B51;
+            --accent-warning: #E07A7A;
             --log-bg: #25343F;
             --log-text: #EAEFEF;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(191, 201, 209, 0.6);
+            border-radius: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(37, 52, 63, 0.5);
         }
 
         * {
@@ -22,14 +40,17 @@
 
         body {
             margin: 0;
+            display: flex;
+            justify-content: center;
             color: var(--text-main);
             background: var(--bg-page);
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .dashboard {
+            width: 100%;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0;
             padding: 24px;
         }
 

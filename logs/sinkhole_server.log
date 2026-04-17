@@ -1,0 +1,63 @@
+Traceback (most recent call last):
+  File "/home/dietpi/genzcybersec/webserver/server.py", line 27, in <module>
+    httpd.serve_forever()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+  File "/usr/lib/python3.13/selectors.py", line 398, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/dietpi/genzcybersec/webserver/server.py", line 27, in <module>
+    httpd.serve_forever()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+  File "/usr/lib/python3.13/selectors.py", line 398, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/dietpi/genzcybersec/webserver/server.py", line 27, in <module>
+    httpd.serve_forever()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+  File "/usr/lib/python3.13/selectors.py", line 398, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/dietpi/genzcybersec/webserver/server.py", line 27, in <module>
+    httpd.serve_forever()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+  File "/usr/lib/python3.13/selectors.py", line 398, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/dietpi/genzcybersec/webserver/server.py", line 27, in <module>
+    httpd.serve_forever()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+  File "/usr/lib/python3.13/selectors.py", line 398, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/dietpi/genzcybersec/webserver/server.py", line 27, in <module>
+    httpd.serve_forever()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+  File "/usr/lib/python3.13/selectors.py", line 398, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/dietpi/genzcybersec/webserver/server.py", line 27, in <module>
+    httpd.serve_forever()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+  File "/usr/lib/python3.13/selectors.py", line 398, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt

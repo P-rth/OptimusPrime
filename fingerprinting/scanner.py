@@ -22,7 +22,8 @@ class DeviceScanner:
         self.registry = DeviceRegistry(config)
 
     def _normalize_mac(self, mac: str) -> str:
-        return (mac or "").strip().lower().replace("-", ":")
+        # Keep separators but normalize case; OUIMapper will handle other formats.
+        return (mac or "").strip().replace("-", ":")
 
     def _parse_leases(self, content: str):
         devices = []

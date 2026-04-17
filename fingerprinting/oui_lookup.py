@@ -97,6 +97,16 @@ class OUIMapper:
             logging.debug("MAC vendor API request failed: %s", exc)
             return None
 
+    def _save_local_map(self):
+        try:
+            os.makedirs(os.path.dirname(self.oui_path), exist_ok=True)
+            tmp = self.oui_path + ".tmp"
+            with open(tmp, "w", encoding="utf-8") as fp:
+                json.dump(self._map, fp, indent=2, sort_keys=True)
+            os.replace(tmp, self.oui_path)
+        except Exception as exc:
+            logging.debug("Failed to persist OUI JSON cache to %s: %s", self.oui_path, exc)
+
     def resolve(self, mac: str) -> str:
         """Resolve MAC to vendor with cache -> API -> local OUI fallback."""
         pretty = self._mac_pretty(mac)
@@ -112,6 +122,11 @@ class OUIMapper:
         vendor = self._fetch_from_api(pretty)
         if vendor:
             self.api_cache[pretty] = vendor
+            # Persist as OUI-based cache for offline fallback.
+            oui = self._mac_to_oui(pretty)
+            if oui and (self._map.get(oui) in (None, "", "Unknown")):
+                self._map[oui] = vendor
+                self._save_local_map()
             return vendor
 
         # Fallback: local OUI mapping
