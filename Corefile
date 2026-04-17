@@ -5,8 +5,9 @@
     }
 
     # 2. If the domain is NOT in the blocklist, resolve it normally
-    # forward . 8.8.8.8 1.1.1.1
+    forward . 8.8.8.8 1.1.1.1
     
     log
     errors
 }
+

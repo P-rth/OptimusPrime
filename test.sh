@@ -2,7 +2,7 @@
 
 # === Configuration ===
 WIFI_IFACE="wlp1s0"
-TETHER_IFACE="enp5s0f4u1"
+TETHER_IFACE="enp3s0f3u2"
 GATEWAY_IP="192.168.0.1"
 SUBNET_MASK="24"
 
@@ -70,6 +70,7 @@ echo " ✅ SYSTEM ACTIVE: AP is broadcasting."
 echo " Logs: coredns.log | hostapd.log"
 echo " Press [CTRL+C] to shut down safely."
 echo "=========================================="
+
 
 # 4. Graceful Teardown (Trap)
 # This catches Ctrl+C and kills the background services before exiting
