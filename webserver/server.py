@@ -23,5 +23,5 @@ class Serv(BaseHTTPRequestHandler):
     def log_message(self, format, *args):
         print(format % args)
 
-httpd = HTTPServer(('0.0.0.0', 80), Serv)
+httpd = HTTPServer(('0.0.0.0', 8080), Serv)
 httpd.serve_forever()

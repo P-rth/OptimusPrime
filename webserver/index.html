@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline Sentinel Dashboard</title>
+    <style>
+        :root {
+            --bg-primary: #eef1f4;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f6f8fa;
+            --border: #d4dbe3;
+            --text-primary: #1f2933;
+            --text-secondary: #4f5d6b;
+            --text-muted: #6b7785;
+            --safe: #24313d;
+            --blocked: #8b3f3f;
+            --focus: #475569;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            color: var(--text-primary);
+            background:
+                linear-gradient(180deg, #f4f6f8 0%, #edf1f5 100%);
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .dashboard {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .page-header {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 18px 20px;
+            margin-bottom: 18px;
+        }
+
+        .page-header h1 {
+            margin: 0;
+            font-size: 1.35rem;
+            letter-spacing: 0.01em;
+            font-weight: 600;
+        }
+
+        .page-header p {
+            margin: 8px 0 0;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 16px;
+        }
+
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 16px;
+        }
+
+        .section-title {
+            margin: 0 0 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .logs-panel {
+            height: 280px;
+            overflow-y: auto;
+            background: #14181d;
+            color: #c7ced6;
+            border: 1px solid #2a3038;
+            padding: 12px;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 0.86rem;
+            line-height: 1.45;
+            white-space: pre-wrap;
+        }
+
+        .log-line {
+            margin-bottom: 6px;
+        }
+
+        .config-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-field.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-size: 0.84rem;
+            color: var(--text-secondary);
+        }
+
+        input {
+            width: 100%;
+            border: 1px solid var(--border);
+            background: #fff;
+            color: var(--text-primary);
+            padding: 9px 10px;
+            font-size: 0.92rem;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: var(--focus);
+        }
+
+        input[readonly] {
+            background: var(--bg-tertiary);
+            color: var(--text-muted);
+            cursor: not-allowed;
+        }
+
+        .submit-btn {
+            grid-column: 1 / -1;
+            justify-self: start;
+            margin-top: 4px;
+            border: 1px solid #3f4d5d;
+            background: #2f3a46;
+            color: #f1f5f9;
+            padding: 9px 14px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #27313c;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th,
+        td {
+            border: 1px solid var(--border);
+            padding: 9px 10px;
+            text-align: left;
+            vertical-align: top;
+            white-space: nowrap;
+        }
+
+        th {
+            background: #f0f3f7;
+            color: #374553;
+            font-weight: 600;
+        }
+
+        .status-safe {
+            color: var(--safe);
+            font-weight: 600;
+        }
+
+        .status-blocked {
+            color: var(--blocked);
+            font-weight: 600;
+        }
+
+        @media (max-width: 980px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            .config-form {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="dashboard">
+        <header class="page-header">
+            <h1>Inline Sentinel - Security Gateway Dashboard</h1>
+            <p>Live DNS telemetry, configuration controls, and endpoint risk visibility</p>
+        </header>
+
+        <div class="layout">
+            <section class="section">
+                <h2 class="section-title">CoreDNS Logs</h2>
+                <div id="logsPanel" class="logs-panel" aria-live="polite"></div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Configuration</h2>
+                <form id="configForm" class="config-form">
+                    <div class="form-field">
+                        <label for="configName">Name</label>
+                        <input id="configName" name="name" type="text" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="configEmail">Email</label>
+                        <input id="configEmail" name="email" type="email" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="configIsp">WiFi ISP</label>
+                        <input id="configIsp" name="wifiIsp" type="text" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="configPassword">Password</label>
+                        <input id="configPassword" name="password" type="password" required>
+                    </div>
+
+                    <div class="form-field full">
+                        <label for="configIp">IP Address</label>
+                        <input id="configIp" name="ipAddress" type="text" value="192.168.1.1" readonly>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Update Configuration</button>
+                </form>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Connected IoT Devices</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Status</th>
+                                <th>Hostname</th>
+                                <th>MAC Address</th>
+                                <th>IP Address</th>
+                            </tr>
+                        </thead>
+                        <tbody id="devicesTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Blocked History</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>Device Hostname</th>
+                                <th>Target Domain</th>
+                                <th>Reason</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        function fetchLogs() {
+            const logs = [
+                "[INFO] 10:12:09 query[A] thermostat.local from 192.168.1.34",
+                "[INFO] 10:12:11 query[A] camera.vendor-cloud.net from 192.168.1.41",
+                "[WARN] 10:12:14 blocked telemetry.bad-collector.net from 192.168.1.41",
+                "[INFO] 10:12:17 query[AAAA] speaker.update-service.com from 192.168.1.56",
+                "[WARN] 10:12:20 blocked ads.tracker-stream.io from 192.168.1.77",
+                "[INFO] 10:12:24 query[A] weather-api.internal from 192.168.1.23",
+                "[INFO] 10:12:28 cache hit smart-tv.firmware-update.net"
+            ];
+
+            return Promise.resolve(logs);
+        }
+
+        function fetchDevices() {
+            const devices = [
+                { status: "Safe", hostname: "thermostat-living", macAddress: "B8:27:EB:11:9A:2F", ipAddress: "192.168.1.34" },
+                { status: "Blocked", hostname: "cam-garage", macAddress: "F0:18:98:4D:2A:91", ipAddress: "192.168.1.41" },
+                { status: "Safe", hostname: "smart-speaker", macAddress: "44:65:0D:22:8F:73", ipAddress: "192.168.1.56" },
+                { status: "Blocked", hostname: "kitchen-display", macAddress: "E0:4F:43:0C:17:5D", ipAddress: "192.168.1.77" },
+                { status: "Safe", hostname: "door-lock-main", macAddress: "A4:CF:12:6B:95:80", ipAddress: "192.168.1.23" }
+            ];
+
+            return Promise.resolve(devices);
+        }
+
+        function fetchBlockedHistory() {
+            const blockedHistory = [
+                {
+                    timestamp: "2026-04-18 10:04:13",
+                    hostname: "cam-garage",
+                    targetDomain: "telemetry.bad-collector.net",
+                    reason: "Matched DNS blocklist policy"
+                },
+                {
+                    timestamp: "2026-04-18 10:06:45",
+                    hostname: "kitchen-display",
+                    targetDomain: "ads.tracker-stream.io",
+                    reason: "Suspicious ad/tracker endpoint"
+                },
+                {
+                    timestamp: "2026-04-18 10:09:28",
+                    hostname: "cam-garage",
+                    targetDomain: "cdn-malware-delivery.co",
+                    reason: "Threat intelligence feed hit"
+                }
+            ];
+
+            return Promise.resolve(blockedHistory);
+        }
+
+        function fetchConfiguration() {
+            const configuration = {
+                name: "Operations Team",
+                email: "ops@inline-sentinel.local",
+                wifiIsp: "CityFiber Business",
+                ipAddress: "192.168.1.1"
+            };
+
+            return Promise.resolve(configuration);
+        }
+
+        function appendLogLine(logLine) {
+            const logsPanel = document.getElementById("logsPanel");
+            const line = document.createElement("div");
+            line.className = "log-line";
+            line.textContent = logLine;
+            logsPanel.appendChild(line);
+            logsPanel.scrollTop = logsPanel.scrollHeight;
+        }
+
+        function startLogSimulation(initialLogs) {
+            const rotatingMockLines = [
+                "[INFO] 10:13:02 query[A] thermostat.local from 192.168.1.34",
+                "[INFO] 10:13:05 query[A] light-controller.api from 192.168.1.23",
+                "[WARN] 10:13:08 blocked metrics.untrusted-node.net from 192.168.1.56",
+                "[INFO] 10:13:11 cache hit weather-api.internal",
+                "[WARN] 10:13:14 blocked suspicious-pixel.delivery.io from 192.168.1.77"
+            ];
+
+            initialLogs.forEach(appendLogLine);
+
+            let pointer = 0;
+            setInterval(function () {
+                appendLogLine(rotatingMockLines[pointer]);
+                pointer = (pointer + 1) % rotatingMockLines.length;
+            }, 3000);
+        }
+
+        function renderDevicesTable(devices) {
+            const tableBody = document.getElementById("devicesTableBody");
+            tableBody.innerHTML = "";
+
+            devices.forEach(function (device) {
+                const row = document.createElement("tr");
+                const statusClass = device.status === "Blocked" ? "status-blocked" : "status-safe";
+
+                row.innerHTML =
+                    "<td class=\"" + statusClass + "\">" + device.status + "</td>" +
+                    "<td>" + device.hostname + "</td>" +
+                    "<td>" + device.macAddress + "</td>" +
+                    "<td>" + device.ipAddress + "</td>";
+
+                tableBody.appendChild(row);
+            });
+        }
+
+        function renderBlockedHistoryTable(entries) {
+            const tableBody = document.getElementById("historyTableBody");
+            tableBody.innerHTML = "";
+
+            entries.forEach(function (entry) {
+                const row = document.createElement("tr");
+                row.innerHTML =
+                    "<td>" + entry.timestamp + "</td>" +
+                    "<td>" + entry.hostname + "</td>" +
+                    "<td>" + entry.targetDomain + "</td>" +
+                    "<td>" + entry.reason + "</td>";
+                tableBody.appendChild(row);
+            });
+        }
+
+        function populateConfigurationForm(configuration) {
+            document.getElementById("configName").value = configuration.name;
+            document.getElementById("configEmail").value = configuration.email;
+            document.getElementById("configIsp").value = configuration.wifiIsp;
+            document.getElementById("configIp").value = configuration.ipAddress;
+        }
+
+        function handleConfigurationSubmit(event) {
+            event.preventDefault();
+
+            const payload = {
+                name: document.getElementById("configName").value.trim(),
+                email: document.getElementById("configEmail").value.trim(),
+                wifiIsp: document.getElementById("configIsp").value.trim(),
+                password: document.getElementById("configPassword").value,
+                ipAddress: document.getElementById("configIp").value
+            };
+
+            console.log("Configuration update payload:", payload);
+        }
+
+        function initializeDashboard() {
+            Promise.all([fetchLogs(), fetchDevices(), fetchBlockedHistory(), fetchConfiguration()])
+                .then(function (results) {
+                    const logs = results[0];
+                    const devices = results[1];
+                    const blockedHistory = results[2];
+                    const configuration = results[3];
+
+                    startLogSimulation(logs);
+                    renderDevicesTable(devices);
+                    renderBlockedHistoryTable(blockedHistory);
+                    populateConfigurationForm(configuration);
+                })
+                .catch(function (error) {
+                    console.error("Dashboard initialization failed:", error);
+                });
+
+            document.getElementById("configForm").addEventListener("submit", handleConfigurationSubmit);
+        }
+
+        initializeDashboard();
+    </script>
+</body>
+</html>

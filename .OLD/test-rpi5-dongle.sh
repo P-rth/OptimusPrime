@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
 # === Configuration (RPi5 + network dongle) ===
-WIFI_IFACE="wlan0"
-TETHER_IFACE="eth0"
-GATEWAY_IP="192.168.0.1"
-SUBNET_MASK="24"
-HOSTAPD_CONF="hostapd-rpi5.conf"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+. "$SCRIPT_DIR/files/main.conf"
+
+HOSTAPD_CONF="hostapd-rpi5.conf"
 COREDNS_BIN="$SCRIPT_DIR/coredns"
 
 add_iptables_rule_if_missing() {
