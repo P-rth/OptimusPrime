@@ -2,7 +2,11 @@
 import sys
 import signal
 import time
+import logging
 from core import Config, NetworkManager, ServiceManager
+
+# Enable debug logging for diagnostics
+logging.basicConfig(level=logging.DEBUG)
 
 def main():
     config = Config()

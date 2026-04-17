@@ -1,0 +1,5 @@
+sudo: /home/dietpi/genzcybersec/bin/coredns: command not found
+maxprocs: Leaving GOMAXPROCS=4: CPU quota undefined
+.:53
+CoreDNS-1.14.2
+linux/arm64, go1.26.1, dd1df4f
