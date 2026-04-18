@@ -24,7 +24,7 @@ class Config:
     _MAIN_CONF = _load_main_conf(MAIN_CONF)
 
     WIFI_IFACE = _MAIN_CONF.get("WIFI_IFACE", "wlan0")
-    TETHER_IFACE = _MAIN_CONF.get("TETHER_IFACE", "eth0")
+    TETHER_IFACE = _MAIN_CONF.get("TETHER_IFACE", "usb0")
     GATEWAY_IP = _MAIN_CONF.get("GATEWAY_IP", "192.168.0.1")
     SUBNET_MASK = _MAIN_CONF.get("SUBNET_MASK", "24")
 

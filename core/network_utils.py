@@ -1,11 +1,23 @@
 import logging
+import subprocess
 
 
 def iptables_rule_exists(run_cmd, table: str, chain: str, args: list[str]) -> bool:
     """Return True if the iptables rule exists (iptables -C)."""
     check_cmd = ["sudo", "iptables", "-t", table, "-C", chain] + args
-    res = run_cmd(check_cmd)
-    return res.returncode == 0
+    try:
+        # `iptables -C` returns 1 when a rule is not present; that's expected.
+        res = run_cmd(check_cmd, skip_err=True)
+        return res.returncode == 0
+    except TypeError:
+        # Backward compatibility for run_cmd callables without `skip_err`.
+        try:
+            res = run_cmd(check_cmd)
+            return res.returncode == 0
+        except subprocess.CalledProcessError:
+            return False
+    except subprocess.CalledProcessError:
+        return False
 
 
 def iptables_add_rule_if_missing(run_cmd, table: str, chain: str, args: list[str]) -> bool:
@@ -21,5 +33,13 @@ def iptables_add_rule_if_missing(run_cmd, table: str, chain: str, args: list[str
 def iptables_delete_rule(run_cmd, table: str, chain: str, args: list[str]) -> bool:
     """Delete rule; returns True if deletion succeeded (best effort)."""
     del_cmd = ["sudo", "iptables", "-t", table, "-D", chain] + args
-    res = run_cmd(del_cmd)
+    try:
+        res = run_cmd(del_cmd, skip_err=True)
+    except TypeError:
+        try:
+            res = run_cmd(del_cmd)
+        except subprocess.CalledProcessError:
+            return False
+    except subprocess.CalledProcessError:
+        return False
     return res.returncode == 0
