@@ -8,6 +8,7 @@ PORT = 8081
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LOG_FILE = os.path.join(BASE_DIR, "..", "logs", "coredns.log")
 BLOCKLIST_FILE = os.path.join(BASE_DIR, "..", "files", "blocklist.txt")
+DEVICES_FILE = os.path.join(BASE_DIR, "..", "logs", "fingerprinting.csv")
 
 class Handler(http.server.SimpleHTTPRequestHandler):
 
@@ -63,6 +64,31 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 ]
 
             body = json.dumps(items).encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(body)))
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(body)
+            return
+
+        if self.path == "/devices":
+            try:
+                import csv
+                with open(DEVICES_FILE, "r") as f:
+                    reader = csv.DictReader(f)
+                    devices = []
+                    for row in reader:
+                        devices.append({
+                            "status": "Safe",
+                            "hostname": row["hostname"],
+                            "macAddress": row["mac"],
+                            "ipAddress": row["ip"]
+                        })
+            except FileNotFoundError:
+                devices = [{"status": "Error", "hostname": "fingerprinting.csv not found", "macAddress": "", "ipAddress": ""}]
+
+            body = json.dumps(devices).encode("utf-8")
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
             self.send_header("Content-Length", str(len(body)))

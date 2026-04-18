@@ -335,15 +335,11 @@
         }
 
         function fetchDevices() {
-            const devices = [
-                { status: "Safe", hostname: "thermostat-living", macAddress: "B8:27:EB:11:9A:2F", ipAddress: "192.168.1.34" },
-                { status: "Blocked", hostname: "cam-garage", macAddress: "F0:18:98:4D:2A:91", ipAddress: "192.168.1.41" },
-                { status: "Safe", hostname: "smart-speaker", macAddress: "44:65:0D:22:8F:73", ipAddress: "192.168.1.56" },
-                { status: "Blocked", hostname: "kitchen-display", macAddress: "E0:4F:43:0C:17:5D", ipAddress: "192.168.1.77" },
-                { status: "Safe", hostname: "door-lock-main", macAddress: "A4:CF:12:6B:95:80", ipAddress: "192.168.1.23" }
-            ];
-
-            return Promise.resolve(devices);
+            return fetch('/devices')
+                .then(function(res) { return res.json(); })
+                .catch(function() {
+                    return [{ status: 'Error', hostname: 'Could not reach /devices', macAddress: '', ipAddress: '' }];
+                });
         }
 
         function fetchBlockedHistory() {
@@ -395,6 +391,21 @@
             }
             refresh();
             setInterval(refresh, 2000);
+        }
+
+        function startRealtimeDevices() {
+            var lastDeviceData = null;
+            function refresh() {
+                fetchDevices().then(function(devices) {
+                    var newData = JSON.stringify(devices);
+                    if (newData !== lastDeviceData) {
+                        lastDeviceData = newData;
+                        renderDevicesTable(devices);
+                    }
+                });
+            }
+            refresh();
+            setInterval(refresh, 5000);
         }
 
         function renderDevicesTable(devices) {
@@ -453,12 +464,12 @@
 
         function initializeDashboard() {
             startRealtimeLogs();
+            startRealtimeDevices();
 
-            Promise.all([fetchDevices(), fetchBlockedHistory(), fetchConfiguration()])
+            Promise.all([fetchBlockedHistory(), fetchConfiguration()])
                 .then(function (results) {
-                    renderDevicesTable(results[0]);
-                    renderBlockedHistoryTable(results[1]);
-                    populateConfigurationForm(results[2]);
+                    renderBlockedHistoryTable(results[0]);
+                    populateConfigurationForm(results[1]);
                 })
                 .catch(function (error) {
                     console.error("Dashboard initialization failed:", error);
