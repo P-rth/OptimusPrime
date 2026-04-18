@@ -2,6 +2,7 @@ import json
 import logging
 import os
 import time
+from typing import Optional
 
 import requests
 
@@ -67,7 +68,7 @@ class OUIMapper:
         self._map = normalized
         logging.debug("Loaded %d OUIs from %s", len(self._map), self.oui_path)
 
-    def _fetch_from_api(self, mac: str) -> str | None:
+    def _fetch_from_api(self, mac: str) -> Optional[str]:
         """Fetch vendor from api.macvendors.com.
 
         Returns vendor string on success, None on failure / not found.

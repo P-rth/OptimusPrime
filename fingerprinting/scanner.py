@@ -1,6 +1,7 @@
 import os
 import time
 import logging
+from typing import Optional
 
 from .oui_lookup import OUIMapper
 from .classifier import DeviceClassifier
@@ -12,7 +13,7 @@ class DeviceScanner:
 
     DEFAULT_LEASES_PATH = "/var/lib/misc/dnsmasq.leases"
 
-    def __init__(self, config, leases_path: str | None = None, poll_interval_sec: int = 5):
+    def __init__(self, config, leases_path: Optional[str] = None, poll_interval_sec: int = 5):
         self.config = config
         self.leases_path = leases_path or self.DEFAULT_LEASES_PATH
         self.poll_interval_sec = int(poll_interval_sec)

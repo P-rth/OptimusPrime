@@ -2,10 +2,12 @@ import http.server
 import socketserver
 import json
 import os
+import datetime
 
 PORT = 8081
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LOG_FILE = os.path.join(BASE_DIR, "..", "logs", "coredns.log")
+BLOCKLIST_FILE = os.path.join(BASE_DIR, "..", "files", "blocklist.txt")
 
 class Handler(http.server.SimpleHTTPRequestHandler):
 
@@ -19,6 +21,48 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 last_50 = ["[SYSTEM] coredns.log not found."]
 
             body = json.dumps(last_50).encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(body)))
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(body)
+            return
+
+        if self.path == "/blocklist":
+            try:
+                items = []
+                now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                with open(BLOCKLIST_FILE, "r") as f:
+                    for raw in f:
+                        line = raw.strip()
+                        if not line:
+                            continue
+                        parts = line.split(maxsplit=1)
+                        if len(parts) < 2:
+                            continue
+                        ip_addr, domain = parts[0], parts[1]
+                        items.append(
+                            {
+                                "timestamp": now_str,
+                                "hostname": "Parth's Device",
+                                "targetDomain": domain,
+                                "reason": "Matched DNS blocklist policy",
+                                "ipAddress": ip_addr,
+                            }
+                        )
+            except FileNotFoundError:
+                items = [
+                    {
+                        "hostname": "Error",
+                        "targetDomain": "blocklist.txt not found",
+                        "reason": "",
+                        "timestamp": "",
+                        "ipAddress": "",
+                    }
+                ]
+
+            body = json.dumps(items).encode("utf-8")
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
             self.send_header("Content-Length", str(len(body)))

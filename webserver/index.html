@@ -38,6 +38,13 @@
             box-sizing: border-box;
         }
 
+        html,
+        body {
+            min-height: 100vh;
+            height: auto;
+            overflow-y: auto;
+        }
+
         body {
             margin: 0;
             display: flex;
@@ -79,7 +86,7 @@
 
         .layout {
             display: grid;
-            grid-template-columns: 1.1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 16px;
         }
 
@@ -99,7 +106,7 @@
         }
 
         .logs-panel {
-            height: 280px;
+            height: 400px;
             overflow-y: auto;
             background: var(--log-bg);
             color: var(--log-text);
@@ -109,7 +116,8 @@
             font-family: Consolas, "Courier New", monospace;
             font-size: 0.86rem;
             line-height: 1.45;
-            white-space: pre-wrap;
+            white-space: pre-line;
+            word-break: break-all;
         }
 
         .log-line {
@@ -339,33 +347,23 @@
         }
 
         function fetchBlockedHistory() {
-            const blockedHistory = [
-                {
-                    timestamp: "2026-04-18 10:04:13",
-                    hostname: "cam-garage",
-                    targetDomain: "telemetry.bad-collector.net",
-                    reason: "Matched DNS blocklist policy"
-                },
-                {
-                    timestamp: "2026-04-18 10:06:45",
-                    hostname: "kitchen-display",
-                    targetDomain: "ads.tracker-stream.io",
-                    reason: "Suspicious ad/tracker endpoint"
-                },
-                {
-                    timestamp: "2026-04-18 10:09:28",
-                    hostname: "cam-garage",
-                    targetDomain: "cdn-malware-delivery.co",
-                    reason: "Threat intelligence feed hit"
-                }
-            ];
-
-            return Promise.resolve(blockedHistory);
+            return fetch('/blocklist')
+                .then(function(res) { return res.json(); })
+                .catch(function() {
+                    return [
+                        {
+                            timestamp: "",
+                            hostname: "Error",
+                            targetDomain: "Could not reach blocklist",
+                            reason: ""
+                        }
+                    ];
+                });
         }
 
         function fetchConfiguration() {
             const configuration = {
-                name: "Operations Team",
+                name: "100-Human",
                 email: "ops@inline-sentinel.local",
                 wifiIsp: "CityFiber Business",
                 ipAddress: "192.168.1.1"
@@ -383,11 +381,16 @@
             logsPanel.scrollTop = logsPanel.scrollHeight;
         }
 
+        let lastLogLines = [];
+
         function startRealtimeLogs() {
             function refresh() {
                 fetchLogs().then(function(lines) {
-                    document.getElementById('logsPanel').innerHTML = '';
-                    lines.forEach(appendLogLine);
+                    if (JSON.stringify(lines) !== JSON.stringify(lastLogLines)) {
+                        document.getElementById('logsPanel').innerHTML = '';
+                        lines.forEach(appendLogLine);
+                        lastLogLines = lines;
+                    }
                 });
             }
             refresh();
