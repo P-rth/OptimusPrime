@@ -4,7 +4,7 @@ import json
 import os
 import datetime
 
-PORT = 8081
+PORT = 80
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LOG_FILE = os.path.join(BASE_DIR, "..", "logs", "coredns.log")
 BLOCKLIST_FILE = os.path.join(BASE_DIR, "..", "files", "blocklist.txt")
